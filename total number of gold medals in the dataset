@@ -1,0 +1,2 @@
+total_gold_medals = df[df['Medal'] == 'Gold']['Medal'].count()
+print("Number of gold medals won in total:", total_gold_medals)
