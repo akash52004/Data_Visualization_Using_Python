@@ -1,0 +1,10 @@
+# Group the data by athlete and count the number of gold medals for each athlete
+athlete_gold_count = df[df['Medal'] == 'Gold'].groupby('Name')['Medal'].count()
+
+# Find the athlete with the maximum number of gold medals
+athlete_with_max_gold = athlete_gold_count.idxmax()
+max_gold_count = athlete_gold_count.max()
+
+# Print the result
+print("Athlete with the maximum number of gold medals:", athlete_with_max_gold)
+print("Number of gold medals won by", athlete_with_max_gold + ":", max_gold_count)
