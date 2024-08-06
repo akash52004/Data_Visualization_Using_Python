@@ -1,0 +1,8 @@
+# Filter the data for gold medals won by India
+india_gold_medals = df[(df['Team'] == 'India') & (df['Medal'] == 'Gold')]
+
+# Count the total number of gold medals won by India
+total_gold_medals_india = india_gold_medals.shape[0]
+
+# Print the result
+print("Total number of gold medals won by India:", total_gold_medals_india)
