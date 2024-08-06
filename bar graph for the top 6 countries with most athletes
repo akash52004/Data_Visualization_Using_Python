@@ -1,0 +1,29 @@
+# Filter the data for the top 6 countries with the most athletes in both summer and winter games
+top_countries_summer = df[df['Games'].str.contains('Summer')].groupby('Team')['Name'].nunique().nlargest(6)
+top_countries_winter = df[df['Games'].str.contains('Winter')].groupby('Team')['Name'].nunique().nlargest(6)
+
+# Combine the top countries from both summer and winter games
+top_countries = list(set(top_countries_summer.index) | set(top_countries_winter.index))
+
+# Filter the dataset for the top countries
+top_countries_data_summer = df[(df['Games'].str.contains('Summer')) & (df['Team'].isin(top_countries))]
+top_countries_data_winter = df[(df['Games'].str.contains('Winter')) & (df['Team'].isin(top_countries))]
+
+# Group the data by country and count the number of athletes in both summer and winter games
+athletes_count_summer = top_countries_data_summer.groupby('Team')['Name'].nunique()
+athletes_count_winter = top_countries_data_winter.groupby('Team')['Name'].nunique()
+
+# Plotting
+plt.figure(figsize=(8, 6))
+
+plt.bar(athletes_count_summer.index, athletes_count_summer.values, color='skyblue', label='Summer Games')
+plt.bar(athletes_count_winter.index, athletes_count_winter.values, color='orange', label='Winter Games')
+
+plt.xlabel('Country')
+plt.ylabel('Number of Athletes')
+plt.title('Number of Athletes in Summer and Winter Games vs. Top 6 Countries')
+plt.xticks(rotation=45)
+plt.legend()
+
+plt.tight_layout()
+plt.show()
