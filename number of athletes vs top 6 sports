@@ -1,0 +1,15 @@
+# Group the data by sport and count the number of unique athletes
+athletes_count_by_sport = df.groupby('Sport')['Name'].nunique().nlargest(6)
+
+# Plotting
+plt.figure(figsize=(8,6))
+
+plt.bar(athletes_count_by_sport.index, athletes_count_by_sport.values, color='skyblue')
+
+plt.xlabel('Sport')
+plt.ylabel('Number of Athletes')
+plt.title('Number of Athletes vs. Top 6 Sports')
+plt.xticks(rotation=45)
+
+plt.tight_layout()
+plt.show()
