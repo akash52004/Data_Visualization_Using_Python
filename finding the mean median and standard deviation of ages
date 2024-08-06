@@ -1,0 +1,11 @@
+ages = df['Age']
+
+
+mean_age = ages.mean()
+median_age = ages.median()
+std_dev_age = ages.std()
+
+s
+print("Mean age:", mean_age)
+print("Median age:", median_age)
+print("Standard deviation of age:", std_dev_age)
