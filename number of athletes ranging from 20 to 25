@@ -1,0 +1,6 @@
+athletes_age_20_to_25 = df[(df['Age'] >= 20) & (df['Age'] <= 25)]
+
+
+num_athletes_age_20_to_25 = len(athletes_age_20_to_25)
+
+print("Number of athletes in the age range of 20 to 25:", num_athletes_age_20_to_25)
