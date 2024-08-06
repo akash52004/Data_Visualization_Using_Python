@@ -1,0 +1,11 @@
+
+ages = df['Age']
+
+# Create histogram
+plt.figure(figsize=(10, 6))
+plt.hist(ages, bins=20, color='skyblue', edgecolor='black')  # Adjust the number of bins as needed
+plt.xlabel('Age')
+plt.ylabel('Number of Athletes')
+plt.title('Histogram of Number of Athletes vs. Age')
+plt.grid(True)
+plt.show()
