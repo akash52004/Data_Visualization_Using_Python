@@ -1,0 +1,17 @@
+
+ages = df['Age']
+age_counts = ages.value_counts().sort_index()
+
+# Generate the bar chart
+plt.figure(figsize=(10, 6))
+plt.bar(age_counts.index, age_counts.values, color='skyblue')
+
+# Customize the chart
+plt.xlabel('Age')
+plt.ylabel('Number of Athletes')
+plt.title('Number of Athletes vs. Age')
+plt.xticks(rotation=45)
+plt.grid(True)
+
+# Display the chart
+plt.show()
