@@ -1,0 +1,13 @@
+# Count the total number of each type of medal
+total_medals = df['Medal'].value_counts()
+
+# Plotting
+plt.figure(figsize=(6,6))
+
+plt.pie(total_medals, labels=total_medals.index, autopct='%1.1f%%', startangle=140)
+
+plt.title('Distribution of Total Medals Won')
+
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+plt.show()
